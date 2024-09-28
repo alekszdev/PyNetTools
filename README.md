@@ -8,7 +8,7 @@
 - python-whois
 - scapy
 
-![image]([[https://raw.githubusercontent.com/alekszdev/PyNetTools/refs/heads/main/PyNetTools.gif](https://github.com/alekszdev/PyNetTools/blob/main/PyNetTools.gif)](https://raw.githubusercontent.com/alekszdev/PyNetTools/refs/heads/main/PyNetTools.gif))
+![image](https://raw.githubusercontent.com/alekszdev/PyNetTools/refs/heads/main/PyNetTools.gif)
 
 ```bash
 git clone https://github.com/alekszdev/PyNetTools
