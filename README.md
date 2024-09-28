@@ -8,6 +8,9 @@
 - python-whois
 - scapy
 
+![image](https://github.com/user-attachments/assets/f38bbe2a-7c3e-44b4-b4f6-182675cee369)
+
+
 ![image](https://github.com/user-attachments/assets/cc707845-4e5e-435c-aece-547ad07c57ee)
 
 ```bash
