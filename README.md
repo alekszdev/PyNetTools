@@ -2,16 +2,16 @@
 
 - **Language**: Python
 - **Requirements**:
-- requests
-- colorama
-- python-nmap
-- python-whois
-- scapy
+- ```requests```
+- ```colorama```
+- ```python-nmap```
+- ```python-whois```
+- ```scapy```
 
 ![image](https://raw.githubusercontent.com/alekszdev/PyNetTools/refs/heads/main/PyNetTools.gif)
 
 # SUPPORT
-**Discord to Suppor**: https://discord.gg/PTua75yVRp
+**Discord for Support**: https://discord.gg/PTua75yVRp
 
 ```bash
 git clone https://github.com/alekszdev/PyNetTools
