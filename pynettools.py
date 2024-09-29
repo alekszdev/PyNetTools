@@ -11,11 +11,7 @@ from scapy.all import IP, TCP, sr1
 
 
 def clear_screen():
-    os_system = platform.system()
-    if os_system == "Windows":
-        os.system('cls')
-    elif os_system in ["Linux", "Darwin"]:
-        os_system('clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
 clear_screen()
 
 
