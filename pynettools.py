@@ -157,7 +157,8 @@ def main_menu():
            /$$  | $$                                                                    
           |  $$$$$$/                                                                    
            \______/                                                                     
-           {Fore.RESET}                                                        
+           {Fore.RESET}  
+by: alekszdev
             """
     print(logo)
     print(f"{Fore.CYAN}[{Fore.RESET}1{Fore.CYAN}]{Fore.RESET} PORT SCANNER")
