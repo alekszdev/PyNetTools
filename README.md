@@ -14,7 +14,7 @@
 **Discord for Support**: https://discord.gg/PTua75yVRp
 
 ```bash
-git clone https://github.com/alekszdev/PyNetTools
+git clone https://github.com/alekszdev/pynettools
 cd PyNetTools
 pip3 install -r requirements.txt
 python3 pynettolls.py
