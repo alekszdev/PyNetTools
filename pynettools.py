@@ -129,11 +129,10 @@ def whois_look():
 
 def ping_test():
     ip = input("Enter an IP to test conectivity: ")
-    current_os = platform.system()
-    if current_os == "Windows":
-        command = ['ping', '-n', '4', ip]
+    if os.name == 'nt'
+        command = ['ping', '-n', '1', ip]
     else:
-        command = ['ping', '-c', '4', ip]
+        command = ['ping', '-c', '1', ip]
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
     if result.returncode == 0:
