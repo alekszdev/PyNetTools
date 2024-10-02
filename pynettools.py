@@ -8,10 +8,11 @@ import os
 import platform
 import subprocess
 from scapy.all import IP, TCP, sr1
+import whois.whois
 
 
 def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("clear || cls")
 clear_screen()
 
 
@@ -129,7 +130,8 @@ def whois_look():
 
 def ping_test():
     ip = input("Enter an IP to test conectivity: ")
-    if os.name == 'nt'
+    current_os = platform.system()
+    if current_os == "Windows":
         command = ['ping', '-n', '1', ip]
     else:
         command = ['ping', '-c', '1', ip]
@@ -139,6 +141,26 @@ def ping_test():
         print(f"{Fore.YELLOW}[{Fore.RESET}+{Fore.YELLOW}]{Fore.RESET} You have conectivity for: {ip}")
     else:
         print(f"{Fore.YELLOW}[{Fore.RESET}+{Fore.YELLOW}]{Fore.RESET} You have no connectivity")
+
+
+
+def select_option(option):
+    actions = {
+        1: scanner,
+        2: ipapi,
+        3: get_dns_ip,
+        4: whois_look,
+        5: ping_test
+    }
+    if option in actions:
+        actions[option]()
+
+
+
+def try_again():
+    try_another = input(f"Try another time (y/n): ")
+    if try_another=='y':
+        main_menu()
 
 
 
@@ -166,55 +188,10 @@ by: alekszdev
     print(f"{Fore.CYAN}[{Fore.RESET}4{Fore.CYAN}]{Fore.RESET} DOMAIN INFO")
     print(f"{Fore.CYAN}[{Fore.RESET}5{Fore.CYAN}]{Fore.RESET} CHECK CONECTIVITY")
     try:
-        option_1 = int(input("> "))
-
-
-
-        if option_1==1:
-            scanner()
-            option_2 = input(f"{Fore.CYAN}[{Fore.RESET}+{Fore.CYAN}]{Fore.RESET} You want to try another time (y/n): ")
-
-
-
-        elif option_1==2:
-            ipapi()
-            option_2 = input(f"{Fore.CYAN}[{Fore.RESET}+{Fore.CYAN}]{Fore.RESET} You want to try another time (y/n): ")
-
-
-
-        elif option_1==3:
-            get_dns_ip()
-            option_2 = input(f"{Fore.CYAN}[{Fore.RESET}+{Fore.CYAN}]{Fore.RESET} You want to try another time (y/n): ")
-
-
-        
-        elif option_1==4:
-            whois_look()
-            option_2 = input(f"{Fore.CYAN}[{Fore.RESET}+{Fore.CYAN}]{Fore.RESET} You want to try another time (y/n): ")
-
-
-
-        elif option_1==5:
-            ping_test()
-            option_2 = input(f"{Fore.CYAN}[{Fore.RESET}+{Fore.CYAN}]{Fore.RESET} You want to try another time (y/n): ")
-        else:
-            print(f"{Fore.RED}[{Fore.RESET}+{Fore.RED}]{Fore.RESET} Please enter a valid option")
-        if option_2=='y':
-            main_menu()
-
-
-    except ValueError:
-        clear_screen()
-        print(f"{Fore.RED}[{Fore.RESET}+{Fore.RED}]{Fore.RESET} Enter a valid option")
-
-        option_2 = input(f"{Fore.CYAN}[{Fore.RESET}+{Fore.CYAN}]{Fore.RESET} You want to try another time (y/n): ")
-        if option_2=='y':
-            main_menu()
-    except UnboundLocalError:
-        clear_screen()
-        print(f"{Fore.RED}[{Fore.RESET}+{Fore.RED}]{Fore.RESET} An error has ocurred enter a valid option")
-
-        option_2 = input(f"{Fore.CYAN}[{Fore.RESET}+{Fore.CYAN}]{Fore.RESET} You want to try another time (y/n): ")
-        if option_2=='y':
-            main_menu()
+        option = int(input(f"> "))
+        select_option(option)
+        try_again()
+    except ValueError as e:
+        print(f"{Fore.RED}[{Fore.RESET}+{Fore.RED}]{Fore.RESET} An error has ocurred: {e}")
+        try_again()
 main_menu()
